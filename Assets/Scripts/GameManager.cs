@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject   game1, 
                         blankScreen;
 
-    //public Text ready;
+    public Text ready;
 
     bool blankRoutine = true;
 
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         START,
         GAME,
+        INBETWEEN,
         END
     }; MicroGames microgames;
 
@@ -42,6 +43,9 @@ public class GameManager : MonoBehaviour
             case MicroGames.GAME:
                 blankScreen.SetActive(false);
                 game1.SetActive(true);
+                break;
+
+            case MicroGames.INBETWEEN:
                 break;
 
             case MicroGames.END:
