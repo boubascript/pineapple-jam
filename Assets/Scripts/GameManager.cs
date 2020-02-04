@@ -6,10 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject   game1, 
-                        blankScreen;
-
-    public Text ready;
+    public GameObject blankScreen;
+    public GameObject[] games;
 
     bool blankRoutine = true;
 
@@ -24,7 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Screen.orientation = ScreenOrientation.Landscape;
-        game1.SetActive(false);
+        games[0].SetActive(false);
         blankScreen.SetActive(false);
 
         microgames = MicroGames.START;
@@ -42,7 +40,7 @@ public class GameManager : MonoBehaviour
 
             case MicroGames.GAME:
                 blankScreen.SetActive(false);
-                game1.SetActive(true);
+                games[0].SetActive(true);
                 break;
 
             case MicroGames.INBETWEEN:
