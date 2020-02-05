@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    private void Start()
+    {
+        Screen.orientation = ScreenOrientation.Landscape;   
+    }
+
     public void quitGame()
     {
         Application.Quit();
